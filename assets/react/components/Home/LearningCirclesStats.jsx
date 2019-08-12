@@ -30,35 +30,32 @@ export default class LearningCirclesStats extends Component {
     if (stats) {
       return (
         <div className="stacked-numbers row">
-          <div className="col-sm-12 col-md-4 card border-0">
-            <i className="material-icons">group</i>
+          <div className="col-sm-12 col-md-4 card bg-light border-0">
+            <p>People join a learning circle to meet up in person and learn together...</p>
             <h4 className="bold">
               <NumberWithLabel
                 number={stats.learning_circle_count}
                 label='learning circles'
               />
             </h4>
-            <p>Learn together in a small group with your neighbors.</p>
           </div>
-          <div className="col-sm-12 col-md-4 card border-0">
-            <i className="material-icons">important_devices</i>
+          <div className="col-sm-12 col-md-4 card bg-light border-0">
+            <p>... using free, online courses from around the web...</p>
             <h4 className="bold">
               <NumberWithLabel
                 number={stats.facilitators}
                 label='courses'
               />
             </h4>
-            <p>Use free, online courses from around the web.</p>
           </div>
-          <div className="col-sm-12 col-md-4 card border-0">
-            <i className="material-icons">pin_drop</i>
+          <div className="col-sm-12 col-md-4 card bg-light border-0">
+            <p>...at public spaces such as libraries and community centers.</p>
             <h4 className="bold">
               <NumberWithLabel
                 number={stats.cities}
                 label='participating cities'
               />
             </h4>
-            <p>Meet weekly in public spaces like libraries and community centers.</p>
           </div>
         </div>
       );

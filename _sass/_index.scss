@@ -75,6 +75,86 @@ main {
 		}
   }
 
+  section#landing {
+	  padding-top: $padding-lg;
+	  padding-bottom: $padding-lg;
+
+	  .welcome-text {
+	    margin: $padding-md 0;
+	  }
+
+	  .video {
+	    position: relative;
+
+	    .media {
+	      background-color: $p2pu-light-blue;
+	      position: relative;
+	      height: 360px;
+	      overflow: hidden;
+	      margin-top: 10px;
+
+	      img, iframe {
+	        position: absolute;
+	      }
+
+	      iframe {
+	        display: none;
+	      }
+
+	      img {
+	        height: 100%;
+	        width: 100%;
+	        object-fit: cover;
+	      }
+	    }
+
+	    .overlay {
+	      position: absolute;
+	      height: 100%;
+	      width: 100%;
+	      top: 0;
+	      left: 0;
+	      display: flex;
+	      align-items: center;
+	      justify-content: center;
+
+	      #play-video {
+	        background: transparent;
+	        outline: none;
+	        border: none;
+	        color: #ffffffab;
+
+	        .material-icons {
+	          font-size: 120px;
+	        }
+	      }
+	    }
+	  }
+
+	  .modal.fade.in {
+	    background: #fff;
+	  }
+
+	  .modal-dialog {
+	    width: 80vw;
+
+	    .modal-header {
+	      display: flex;
+	      justify-content: flex-end;
+	    }
+
+	    .modal-body {
+	      height: 80vh;
+	    }
+	  }
+
+	  @media (max-width: 768px) {
+	    .modal-dialog {
+	      width: unset;
+	    }
+	  }
+	}
+
 	section#landing {
 		@include flex-column-centered;
 		padding: $padding-sm 0;
@@ -289,82 +369,80 @@ main {
 		}
 	}
 
-	#testimonials {
-		margin-bottom: $padding-md;
+	/* Testimonials */
 
-		.slide-container {
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
+	.slide-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.slide {
+		display: flex;
+		justify-content: center;
+		align-content: flex-start;
+		width: 680px;
+		margin: 6px;
+
+		&:focus {
+			outline: none;
 		}
 
-		.slide {
+		.slick-slide:not(.slick-current) {
+			cursor: pointer;
+		}
+
+		.testimonial-card {
+			transition: all 0.4s ease-in-out;
+			transform: scale(0.8);
+			background: $gray-lighter;
+			border-radius: 20px;
+			box-shadow: -1px 1px 3px 1px rgba(0,0,0,0.1);
 			display: flex;
-			justify-content: center;
-			align-content: flex-start;
-			width: 680px;
-			margin: 6px;
+			flex-direction: column;
+			padding: $padding-md;
+			z-index: 0;
 
-			&:focus {
-				outline: none;
+			.quote {
+				margin: $padding-sm;
 			}
 
-			.slick-slide:not(.slick-current) {
-				cursor: pointer;
-			}
-
-			.testimonial-card {
-				transition: all 0.4s ease-in-out;
-				transform: scale(0.8);
-				background: $gray-lighter;
-				border-radius: 20px;
-				box-shadow: -1px 1px 3px 1px rgba(0,0,0,0.1);
+			.attribution {
 				display: flex;
-				flex-direction: column;
-				padding: $padding-md;
-				z-index: 0;
+				align-items: center;
+		    justify-content: center;
 
-				.quote {
-					margin: $padding-sm;
+				.image {
+					height: 100px;
+					width: 100px;
+					margin-right: $padding-sm;
+
+					img {
+						border-radius: 50%;
+						height: 100%;
+						width: 100%;
+					}
 				}
 
-				.attribution {
-					display: flex;
-					align-items: center;
-			    justify-content: center;
-
-					.image {
-						height: 100px;
-						width: 100px;
-						margin-right: $padding-sm;
-
-						img {
-							border-radius: 50%;
-							height: 100%;
-							width: 100%;
-						}
+				.text {
+					.name {
+						font-weight: 700;
+						padding-bottom: 6px;
 					}
 
-					.text {
-						.name {
-							font-weight: 700;
-							padding-bottom: 6px;
-						}
-
-						.organization {
-							font-size: $font-size-sm;
-						}
+					.organization {
+						font-size: $font-size-sm;
 					}
 				}
 			}
+		}
 
-			&.slick-current.slick-active.slick-center {
-				.testimonial-card {
-					transform: scale(1);
-					background: white;
-					z-index: 1;
-				}
+		&.slick-current.slick-active.slick-center {
+			.testimonial-card {
+				transform: scale(1);
+				background: white;
+				z-index: 1;
 			}
 		}
 	}

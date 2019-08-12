@@ -69,10 +69,10 @@ class HeaderTextCarousel extends React.Component {
 
   render() {
     return (
-      <h1 className="bold centered">
+      <h2>
         <span ref={this.phraseContainer} />
         <span>in your neighborhood, for free. </span>
-      </h1>
+      </h2>
     );
   }
 }
