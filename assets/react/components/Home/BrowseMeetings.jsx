@@ -42,7 +42,7 @@ const BrowseMeetings = (props) => {
           return(
             <div className="col-12 col-md-4" key={index}>
               <MeetingCard
-                title={ meeting.course.title }
+                title={ meeting.name }
                 date={formattedMeetingDate}
                 time={formattedStartTime}
                 facilitator={ meeting.facilitator }
