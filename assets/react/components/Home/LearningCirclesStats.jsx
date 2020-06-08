@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ApiHelper from '../../helpers/ApiHelper'
-import NumberWithLabel from 'p2pu-input-fields/dist/NumberWithLabel'
+import CountupNumberWithLabel from './CountupNumberWithLabel'
 
 export default class LearningCirclesStats extends Component {
 
@@ -33,7 +33,7 @@ export default class LearningCirclesStats extends Component {
           <div className="col-sm-12 col-md-4 card border-0">
             <i className="material-icons">group</i>
             <h4 className="bold">
-              <NumberWithLabel
+              <CountupNumberWithLabel
                 number={stats.learning_circle_count}
                 label='learning circles'
               />
@@ -43,7 +43,7 @@ export default class LearningCirclesStats extends Component {
           <div className="col-sm-12 col-md-4 card border-0">
             <i className="material-icons">important_devices</i>
             <h4 className="bold">
-              <NumberWithLabel
+              <CountupNumberWithLabel
                 number={stats.facilitators}
                 label='courses'
               />
@@ -53,7 +53,7 @@ export default class LearningCirclesStats extends Component {
           <div className="col-sm-12 col-md-4 card border-0">
             <i className="material-icons">pin_drop</i>
             <h4 className="bold">
-              <NumberWithLabel
+              <CountupNumberWithLabel
                 number={stats.cities}
                 label='participating cities'
               />
